@@ -109,8 +109,12 @@ gen/
 out/
 
 # Gradle files
-.gradle/
+.gradle
 build/
+
+# Gradlew files
+gradlew*
+gradle-wrapper*
 
 # Local configuration file (sdk path, etc)
 local.properties
