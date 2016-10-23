@@ -19,6 +19,11 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import go.weather.Weather;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -55,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -109,7 +113,30 @@ public class MainActivity extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+
+            try {
+                byte[] data = Weather.fetchDefaultCities();
+                String json = new String(data);
+                JSONArray cityList = new JSONArray(json);
+                for (int i = 0; i < cityList.length(); i++) {
+                    JSONObject city = cityList.getJSONObject(i);
+//                    labels.get(i).setText(
+                    textView.setText(
+                            city.getString("name") +
+                                    ", " +
+                                    city.getString("temp") +
+                                    ", " +
+                                    city.getString("desc"));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+
+
+
+//            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }
