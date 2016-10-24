@@ -18,7 +18,6 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
 
         try {
             byte[] data = Weather.fetchDefaultCities();
@@ -27,12 +26,12 @@ public class HomeFragment extends Fragment {
             for (int i = 0; i < cityList.length(); i++) {
                 JSONObject city = cityList.getJSONObject(i);
 //                    labels.get(i).setText(
-                textView.setText(
-                        city.getString("name") +
-                                ", " +
-                                city.getString("temp") +
-                                ", " +
-                                city.getString("desc"));
+                TextView cityView = (TextView) rootView.findViewById(R.id.city);
+                cityView.setText(city.getString("name"));
+                TextView descriptionView = (TextView) rootView.findViewById(R.id.description);
+                descriptionView.setText(city.getString("desc"));
+                TextView temperatureView = (TextView) rootView.findViewById(R.id.temperature);
+                temperatureView.setText(city.getString("temp"));
             }
         } catch (Exception e) {
             e.printStackTrace();
