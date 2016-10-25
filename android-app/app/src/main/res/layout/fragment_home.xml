@@ -3,54 +3,173 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.github.antoinerichard.weathermobile.androidapp.HomeFragment">
+    tools:context="com.github.antoinerichard.weathermobile.androidapp.HomeFragment"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
-    <android.support.v7.widget.CardView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        card_view:cardCornerRadius="3dp">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardElevation="3dp"
+            android:layout_marginTop="@dimen/appbar_padding_top"
+            android:layout_marginBottom="@dimen/appbar_padding_top"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/appbar_padding_top">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/city1name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:padding="@dimen/appbar_padding_top" />
+
+                    <TextView
+                        android:id="@+id/city1description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:paddingBottom="@dimen/appbar_padding_top"
+                        android:paddingLeft="@dimen/appbar_padding_top"
+                        android:paddingRight="@dimen/appbar_padding_top" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/city"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="city" />
-
-                <TextView
-                    android:id="@+id/description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="placeholder" />
+                    android:id="@+id/city1temperature"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="36sp"
+                    android:padding="@dimen/activity_vertical_margin" />
 
             </LinearLayout>
 
-            <TextView
-                android:text="30"
-                android:layout_width="wrap_content"
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardElevation="3dp"
+            android:layout_marginBottom="@dimen/appbar_padding_top"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/appbar_padding_top">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/temperature"
-                android:layout_weight="1"
-                android:textAlignment="textEnd"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="36sp" />
+                android:padding="@dimen/appbar_padding_top">
 
-        </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-    </android.support.v7.widget.CardView>
+                    <TextView
+                        android:id="@+id/city2name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:padding="@dimen/appbar_padding_top" />
+
+                    <TextView
+                        android:id="@+id/city2description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:paddingBottom="@dimen/appbar_padding_top"
+                        android:paddingLeft="@dimen/appbar_padding_top"
+                        android:paddingRight="@dimen/appbar_padding_top" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/city2temperature"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="36sp"
+                    android:padding="@dimen/activity_vertical_margin" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardElevation="3dp"
+            android:layout_marginBottom="@dimen/appbar_padding_top"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/appbar_padding_top">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/appbar_padding_top">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/city3name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:padding="@dimen/appbar_padding_top" />
+
+                    <TextView
+                        android:id="@+id/city3description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:paddingBottom="@dimen/appbar_padding_top"
+                        android:paddingLeft="@dimen/appbar_padding_top"
+                        android:paddingRight="@dimen/appbar_padding_top" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/city3temperature"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="36sp"
+                    android:padding="@dimen/activity_vertical_margin" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
 
 </RelativeLayout>

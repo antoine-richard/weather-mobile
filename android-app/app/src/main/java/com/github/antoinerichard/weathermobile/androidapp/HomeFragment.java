@@ -25,13 +25,16 @@ public class HomeFragment extends Fragment {
             JSONArray cityList = new JSONArray(json);
             for (int i = 0; i < cityList.length(); i++) {
                 JSONObject city = cityList.getJSONObject(i);
-//                    labels.get(i).setText(
-                TextView cityView = (TextView) rootView.findViewById(R.id.city);
-                cityView.setText(city.getString("name"));
-                TextView descriptionView = (TextView) rootView.findViewById(R.id.description);
-                descriptionView.setText(city.getString("desc"));
-                TextView temperatureView = (TextView) rootView.findViewById(R.id.temperature);
-                temperatureView.setText(city.getString("temp"));
+
+                int resId = getResources().getIdentifier("city"+(i+1)+"name", "id", getContext().getPackageName());
+                ((TextView) rootView.findViewById(resId)).setText(city.getString("name"));
+
+                resId = getResources().getIdentifier("city"+(i+1)+"description", "id", getContext().getPackageName());
+                ((TextView) rootView.findViewById(resId)).setText(city.getString("desc"));
+
+                resId = getResources().getIdentifier("city"+(i+1)+"temperature", "id", getContext().getPackageName());
+                ((TextView) rootView.findViewById(resId)).setText(city.getString("temp"));
+
             }
         } catch (Exception e) {
             e.printStackTrace();
