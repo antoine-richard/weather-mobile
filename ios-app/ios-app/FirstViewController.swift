@@ -26,6 +26,7 @@ class FirstViewController: UIViewController {
     var labels:[[String: UILabel]]=[[:]]
     
     @IBOutlet weak var errorMessage: UILabel!
+    
     @IBOutlet weak var weatherStack: UIStackView!
     @IBOutlet weak var errorStack: UIStackView!
     
